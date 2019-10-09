@@ -16,6 +16,10 @@ int main() {
   //char arr[] = "dfewgewt";
   //v.string = arr;
   //printf("The string is %s\n", v.string);
+  for (int i = 0; i < 10; i++) {
+    v.string[i] = 'd';
+  }
+  printf("The string is %s\n", v.string);
   printf("After setting string, the float is %f, the integer is %d\n", 
       v.floating_point, v.integer);
   return 0;
