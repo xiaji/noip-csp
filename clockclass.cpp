@@ -5,6 +5,11 @@ class ClockOfTheLongNow {
   void add_year() {
     year++;
   }
+  ClockOfTheLongNow(int year_in) {
+    if (!set_year(year_in)) {
+      year = 2019;
+    }
+  }
   public:
   bool set_year(int new_year) {
     if (new_year < 2019) return false;
@@ -17,7 +22,7 @@ class ClockOfTheLongNow {
 };
 
 int main() {
-  ClockOfTheLongNow clock;
+  ClockOfTheLongNow clock{ 2020 };
   if (!clock.set_year(2017)) {
     clock.set_year(2020);
   }
