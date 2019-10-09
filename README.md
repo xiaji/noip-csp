@@ -1,2 +1,5 @@
 # noip-csp
-practice for noip, now named as csp-senior
+在准备面试的时候，顺便参加了第一届的CSP-Senior的比赛。目标先过初赛，希望去复赛里去看看自己的解题能力以及编码能力是否得到提升。
+
+NOIP的考察知识点和LeetCode大部分都是重叠的。先写这么多，总结之类的，看比赛成绩再说。
+
