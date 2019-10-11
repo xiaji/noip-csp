@@ -14,7 +14,7 @@ void initialize(PodStruct pod) {
   printf("a : %d, b : %s, c : %d\n", pod.a, pod.b, pod.c);
 }
 
-void print_array(int& nums) {
+void print_array(int nums[]) {
   for (int num : nums) {
     printf("%d ", num);
   }
