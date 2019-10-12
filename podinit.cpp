@@ -14,10 +14,11 @@ void initialize(PodStruct pod) {
   printf("a : %d, b : %s, c : %d\n", pod.a, pod.b, pod.c);
 }
 
-void print_array(int nums[]) {
-  for (int num : nums) {
+void print_array(int* nums) {
+  // range-for does not work for pointers
+  /*for (int num : nums) {
     printf("%d ", num);
-  }
+  }*/
 }
 
 int main() {
