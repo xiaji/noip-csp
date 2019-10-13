@@ -27,5 +27,12 @@ int main() {
   prevnext(0, a, b);
   cout << "call prevnext(int x, int& prev, int& next): ";
   cout << "a: " << a << " b: "<< b << endl;
+  int& temp = a;
+  int x = temp;
+  temp = 10;
+  cout << "x: " << x << " temp: " << temp << " a: " << a << endl;
+  cout << "x: " << &x << endl;
+  cout << "temp: " << &temp << endl;
+  cout << "a: " << &a << endl;
   return 0;
 }
