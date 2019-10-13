@@ -25,6 +25,15 @@ void print_array(int nums[], int size) {
   printf("\n");
 }
 
+void print_arr(int* nums, int x, int y) {
+  for (int i = 0; i != x; ++i) {
+    for (int j = 0; j != y; ++j) {
+       printf("%d ", nums[i * x +j]);
+    }
+  }
+  printf("\n");
+}
+
 int main() {
   Test test{9};
   printf("test a : %d\n", test.a);
@@ -44,6 +53,8 @@ int main() {
   print_array(arr3, 5);
   int arr4[5];
   print_array(arr4, 5);
+  int arr5[3][2]{{1, 2}, {4, 5}, {6, 7}};
+  print_arr(arr5[0], 3, 2);
 }
 
 

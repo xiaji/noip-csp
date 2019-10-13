@@ -21,7 +21,11 @@ int main() {
   // cout << count(v, 4) << endl;
   for (auto x : v) 
     cout << x << endl;
-  cout << count(v, 5);
+  cout << count(v, 5) << endl;
+  int a[2][2] = {{1,2},{3,4}};
+  cout << &a << endl;
+  cout << &a[0] << endl;
+  cout << &a[0][0] << endl;
   return 0;
 }
     
