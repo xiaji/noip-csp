@@ -35,6 +35,7 @@ int main() {
   cout << &a[0] << endl;
   cout << &a[0][0] << endl;
   char str[] = "detsfew";
+  cout << str << endl;í
   fp(str);
   cout << str << endl;
   return 0;

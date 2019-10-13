@@ -32,7 +32,7 @@ int main() {
   temp = 10;
   cout << "x: " << x << " temp: " << temp << " a: " << a << endl;
   cout << "x: " << &x << endl;
-  cout << "temp: " << &temp << endl;
+  cout << "temp: " << &temp <<  endl;
   cout << "a: " << &a << endl;
   return 0;
 }
