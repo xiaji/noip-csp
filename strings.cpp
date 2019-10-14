@@ -1,5 +1,8 @@
 #include <cstddef>
 #include <cstdio>
+#include <string>
+#include <iostream>
+using namespace std;
 
 int main() {
   char english[] = "A book holds a house of gold";
@@ -16,5 +19,11 @@ int main() {
     alphabet[i] = i + 65;
   }
   printf("%s\n", alphabet);
+  char* str1 = "adetgfae";
+  char* str2 = "adetewge";
+  string test = "test";
+  cout << test.size() << ' ' << test.length() << endl;
+  // int res = strcmp(str1, str2);
+  cout << strcmp(str1, str2) << endl;
   return 0;
 }
