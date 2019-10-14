@@ -1,3 +1,4 @@
+# https://stackoverflow.com/questions/5711120/gitignore-without-binary-files
 # Prerequisites
 *.d
 
@@ -59,6 +60,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+*.dSYM
 
 #.DS
 .DS_Store
