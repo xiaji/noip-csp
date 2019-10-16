@@ -1,4 +1,5 @@
-#include<cstdio> 
+#include <cstdio>
+#include <iostream> 
 using namespace std; 
 const int N = 110; 
 bool isUse[N];
@@ -9,11 +10,37 @@ bool isSmall() {
     if (a[i] != b[i]) return a[i] < b[i];
   return false;
 }
+
+void print_arr(int* a) {
+  int* start = ++a;
+  int* end = start;
+  while (end - start < n) {
+    cout << *end << ' ';
+    end++;
+  }
+  cout << endl;
+}
+
+void print_arr(bool* a) {
+  bool* start = ++a;
+  bool* end = start;
+  while (end - start < n) {
+    cout << *end << ' ';
+    end++;
+  }
+  cout << endl;
+}
    
 bool getPermutation(int pos) {
   if (pos > n) {
     return isSmall();
   }
+  /*cout << "begin recursion : " << endl;
+  cout << "pos : " << pos << endl;
+  cout << "use : ";
+  print_arr(isUse);
+  cout << "b : ";
+  print_arr(b);*/
   for (int i = 1; i <= n; ++i) {
     if (!isUse[i]) {
       b[pos] = i; isUse[i] = true;
@@ -23,6 +50,12 @@ bool getPermutation(int pos) {
       isUse[i] = false;
     }
   }
+  /*cout << "recursion end : " << endl;
+  cout << "pos : " << pos << endl;
+  cout << "use : ";
+  print_arr(isUse);
+  cout << "b : ";
+  print_arr(b);*/
   return false;
 }
 
@@ -44,6 +77,8 @@ int main() {
   
   for (int i = 1; i <= t; ++i) {
     getNext();
+    // print_arr(isUse);
+    print_arr(a);
   }
 
   for (int i = 1; i <= n; ++i) {
