@@ -30,5 +30,22 @@ int main() {
   for (int i = 0; i < 5; i++) {
     cout << test1[i] << " ";
   }
+  vector<Person> persons(5);
+  for (int i = 0; i < 5; i++) {
+    cout << "Please input the " << i + 1 << " Person's age:" << endl;
+    cin >> persons[i].age;
+    cout << "Please input the " << i + 1 << " Person's name:" << endl;
+    cin >> persons[i].name;
+  }
+  sort(persons.begin(), persons.end(), sort_age);
+  cout << "after sorting by age: " << endl;
+  for (int i = 0; i < 5; i++) {
+    cout << persons[i].age << " ";
+  }
+  sort(persons.begin(), persons.end(), sort_name);
+  cout << "after sorting by name: " << endl;
+  for (int i = 0; i < 5; i++) {
+    cout << persons[i].name << " ";
+  }
   return 0;
 }
