@@ -21,7 +21,7 @@ int main() {
   while (cin >> i) {
     v.push_back(i);
   }
-  sort(v, v + v.size());
+  sort(v.begin(), v.end());
   cout << diff(v);
   return 0;
 }
