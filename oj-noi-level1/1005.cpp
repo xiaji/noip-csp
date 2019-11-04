@@ -1,6 +1,10 @@
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 using namespace std;
+
+ifstream fin("data.in");
+ofstream fout("mine.out");
 
 double quick_power(double rate, int n) {
   double base = 1.0 + rate / 100;
@@ -8,7 +12,9 @@ double quick_power(double rate, int n) {
   while (n != 0) {
     if (n & 1) res *= base;
     base *= base;
-    n >> 1;
+    // mistake: n /= 2
+    // use bit manipulate, forget assign to n
+    n >>= 1;
   }
   return res;
 }
@@ -16,7 +22,7 @@ double quick_power(double rate, int n) {
 int main() {
   double r, x, p;
   double y;
-  cin >> r >> x >> p;
+  fin >> r >> x >> p;
   y = x * quick_power(r, p);
-  cout << fixed << setprecision(2) << y << endl;
+  fout << fixed << setprecision(2) << y << endl;
 }
