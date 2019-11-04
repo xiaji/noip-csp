@@ -15,14 +15,13 @@ const int MOD = 7+1e9;
 int maker(int L,int R) {
   return L + rand() % (R - L + 1);
 }
-ofstream fout("data.in");
+ofstream fout("data.out");
 int main() {
 	unsigned int tm = (unsigned)time(NULL);
   srand(tm);
   //srand(time(0));
 	_rep(i, 0, 100) {
-		int N = maker(0,10000);
-		_rep(i, 0, N) fout << maker(1, 10000) << ' ' << maker(1, 100) << " " << maker(1, 100) << endl;
+		fout << maker(1, 10000) << ' ' << maker(1, 100) << " " << maker(1, 100) << endl;
 	}
   return 0;
 }

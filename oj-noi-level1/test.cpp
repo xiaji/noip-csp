@@ -9,9 +9,9 @@ int main() {
   int n;
   scanf("%d", &n);
   for (int i = 1; i <= n; i++) {
-    system("./data");
-    system("./mine");
-    system("./std");
+    system("./data.o");
+    system("./mine.o");
+    system("./std.o");
     if (system("diff mine.out std.out")) {
       wa++;
       printf("\033[01;31m✘ Wrong Answer \033[0m\033[01;36mon Test #%d \033[0m\n", i);

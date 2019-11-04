@@ -3,7 +3,7 @@
 #include <fstream>
 using namespace std;
 
-ifstream fin("data.in");
+ifstream fin("data.out");
 ofstream fout("mine.out");
 
 double quick_power(double rate, int n) {

@@ -5,7 +5,7 @@ const double eps = 1e-8;
 #define _rep(i, a, b) for (int i = (a); (b) - i > eps; ++i)
 using namespace std;
 
-ifstream fin("data.in");
+ifstream fin("data.out");
 ofstream fout("std.out");
 
 int main() {
