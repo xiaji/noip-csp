@@ -2,10 +2,22 @@
 #include <cstdio>
 #include <algorithm>
 #include <cstdlib>
+//#include <fstream>
 #define _rep(i, a, b) for (int i = (a); i < (b); ++i)
 
-namespace io_f
+using namespace std;
+typedef long long ll;
+
+const int MOD = 99999997;
+const int MAXN = 100005;
+int n, temp[MAXN], c[MAXN];
+ll ans = 0;
+
+struct node
 {
+  int id, v;
+}a[MAXN], b[MAXN];
+
 void open_f()
 {
   freopen("match.in", "r", stdin);
@@ -18,7 +30,7 @@ void close_f()
   fclose(stdout);
 }
 
-int read()
+inline int read()
 {
   int x = 0, sign = 1;
   char ch = 0;
@@ -50,20 +62,8 @@ void init()
     b[i].id = i;
   }
 }
-} // namespace io_f
-using namespace std;
-typedef long long ll;
-const int MOD = 99999997;
-const int MAXN = 100005;
-int n, temp[MAXN], c[MAXN];
-ll ans = 0;
 
-struct node
-{
-  int id, v;
-} a[MAXN], b[MAXN];
-
-bool cmp(node &x, node &y)
+bool cmp(node& x, node& y)
 {
   return x.v < y.v;
 }
@@ -74,7 +74,7 @@ void merge_sort(int start, int end)
     return;
   int mid = start + (end - start) / 2;
   merge_sort(start, mid);
-  merge_sort(end, mid);
+  merge_sort(mid + 1, end);
   int i = start, j = mid + 1;
   for (int k = start; k <= end; ++k)
   {
@@ -98,12 +98,13 @@ void merge_sort(int start, int end)
 
 int main()
 {
-  io_f :: open_f();
-  io_f :: init();
+  open_f();
+  init();
   sort(a, a + n, cmp);
   sort(b, b + n, cmp);
   _rep(i, 0, n) c[a[i].id] = b[i].id;
   merge_sort(0, n - 1);
   printf("%lld", ans);
+  close_f();
   return 0;
 }
