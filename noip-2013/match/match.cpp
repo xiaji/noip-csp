@@ -1,4 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <cstdlib>
 #define _rep(i, a, b) for (int i = (a); i < (b); ++i)
 
 namespace io_f
