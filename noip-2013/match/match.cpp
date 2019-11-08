@@ -103,6 +103,8 @@ int main()
   sort(a, a + n, cmp);
   sort(b, b + n, cmp);
   _rep(i, 0, n) c[a[i].id] = b[i].id;
+  _rep(i, 0, n) cout << c[i] << " ";
+  cout << endl;
   merge_sort(0, n - 1);
   printf("%lld", ans);
   close_f();
