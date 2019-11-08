@@ -19,8 +19,10 @@ struct node {
 }a[MAXN], b[MAXN];
 
 namespace bit {
-  ll lowbit(int x) {
-    return x & (-x);
+  int lowbit(int x) {
+    // ((~(x)) + 1) & x
+    // return x & (-x);
+    return ((~(x)) + 1) & x;
   }
 
   void add(int x) {
@@ -30,17 +32,17 @@ namespace bit {
     }
   }
 
-  ll get_sum(int i) {
-    return sum(n - 1) - sum(i);
-  }
-
-  ll sum(int i) {
-    ll sum = 0;
+  int sum(int i) {
+    int res = 0;
     while (i >= 0) {
-      sum += bits[i];
+      res += bits[i];
       i -= lowbit(i);
     }
-    return sum;
+    return res;
+  }
+
+  int get_sum(int i) {
+    return sum(n - 1) - sum(i);
   }
 }
 
@@ -98,7 +100,7 @@ int main() {
   //bits[0] = 0;  
   _rep(i, 0, n) {
     ans = (ans + get_sum(c[i])) % MOD;
-    add(i);
+    add(c[i]);
   }
   printf("%lld", ans);
   close();
