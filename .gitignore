@@ -1,6 +1,7 @@
 # https://stackoverflow.com/questions/5711120/gitignore-without-binary-files
 # Prerequisites
 *.d
+*.in
 
 # Compiled Object files
 *.slo
@@ -31,6 +32,7 @@
 *.exe
 *.out
 *.app
+*.ans
 
 # Compiled class file
 *.class

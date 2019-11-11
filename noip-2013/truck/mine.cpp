@@ -176,13 +176,21 @@ int lca(int x, int y, int *deep)
   if (deep[x] < deep[y])
     swap(x, y);
   int dist = deep[x] - deep[y], ans = INF;
-  while (dist)
+  /*while (dist > 0)
   {
     int raise = log2(dist);
-    x = anc[x][raise];
     ans = min(ans, cost[x][raise]);
-    dist -= raise;
+    x = anc[x][raise];
+    //printf("x: %d, cost in dist : %d\n", x, cost[x][raise]);
+    dist -= (1 << raise);
+  }*/
+  for (int j = 0; dist; ++j, dist >>= 1) {
+    if (dist & 1) {
+      ans = min(ans, cost[x][j]);
+      x = cost[x][j];
+    }
   }
+
   if (x == y)
     return ans;
   for (int j = mx_log; j >= 0 && (x != y); --j)
@@ -256,10 +264,11 @@ int main()
     int x = io.read();
     int y = io.read();
     if(!uf.is_union(x, y)) {
-      printf("%d", -1);
+      printf("%d\n", -1);
       continue;
     }
-    lca(x, y, deep);
+    //printf("%d, %d\n", x, y);
+    printf("%d\n", lca(x, y, deep));
   }
   io.close();
   return 0;
