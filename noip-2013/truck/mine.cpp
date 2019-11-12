@@ -144,7 +144,7 @@ void dfs(int root, int fno, vector<pair<int, int> > *v, int *deep)
 {
   anc[root][0] = fno;
   deep[root] = deep[fno] + 1;
-  _rep(i, 1, mx_log)
+  _rep(i, 1, mx_log + 1)
   {
     anc[root][i] = anc[anc[root][i - 1]][i - 1];
     cost[root][i] = min(cost[anc[root][i - 1]][i - 1], cost[root][i - 1]);
